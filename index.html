@@ -304,6 +304,35 @@
       #showreel-fractum-more-button {
         text-align: center;
       }
+      #showreel-slide-ocarina-bg .background-image-holder {
+        background-position: center top;
+      }
+      #showreel-slide-ocarina > .inner {
+        align-content: center;
+      }
+      #showreel-slide-ocarina > .shape-divider svg {
+        --shape-width: 1.65;
+        height: 6vw;
+      }
+      #showreel-slide-ocarina {
+        min-height: 50vh;
+      }
+      @media screen and (max-width: 975px) {
+        #showreel-slide-ocarina {
+          min-height: 40vh;
+        }
+      }
+      @media screen and (max-width: 575px) {
+        #showreel-slide-ocarina {
+          min-height: 30vh;
+        }
+      }
+      #showreel-ocarina-spacer-1 .space {
+        height: 16px;
+      }
+      #showreel-ocarina-spacer-2 .space {
+        height: 16px;
+      }
       @media screen and (max-width: 975px) {
         #showreel-slide-cta-bg > .background-image-holder:not(.ed-lazyload) {
           background-image: url("/images/milky-way.jpeg") !important;
@@ -719,6 +748,61 @@
                 data-parameters='{"items":[],"adaptiveHeight":true,"slidesToShow":1,"slidesToScroll":1,"rows":1,"slidesPerRow":1,"height":"500px","animation":"slide","animationSpeed":"800ms","direction":"horizontal","autoplay":true,"autoplaySpeed":"5s","pauseOnHover":true,"loop":true,"nav":true,"dots":true,"enlarge":false,"retinaImages":false,"lazyLoad":"progressive","variableWidth":false,"centerMode":false,"centerPadding":"50px","asNavFor":"","responsive":[{"breakpoint":976,"settings":{"slidesToShow":1,"slidesToScroll":1}},{"breakpoint":767,"settings":{"slidesToShow":1,"slidesToScroll":1}}]}'
                 aria-roledescription="carousel"
               >
+                <div class="ed-slider-item">
+                  <div class="ed-element ed-container full-width" id="showreel-slide-ocarina">
+                    <div class="background">
+                      <figure class="ed-element ed-image wv-bg" id="showreel-slide-ocarina-bg">
+                        <div class="background-image-holder">
+                          <video
+                            src="/images/ocarina-listener.webm"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="auto"
+                            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"
+                          ></video>
+                        </div>
+                      </figure>
+                    </div>
+                    <div class="shape-divider flipped">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 35.28 2.17"
+                        preserveAspectRatio="none"
+                        data-shape="waves"
+                      >
+                        <path
+                          class="cls-1 fill-background"
+                          d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="inner">&nbsp;</div>
+                  </div>
+                  <div class="ed-element ed-container content-container" id="showreel-ocarina-content">
+                    <div class="inner">
+                      <div class="ed-element ed-headline custom-theme" id="showreel-ocarina-heading">
+                        <h3 class="center">Ocarina Listener</h3>
+                      </div>
+                      <div class="ed-element ed-spacer" id="showreel-ocarina-spacer-1">
+                        <div class="space"></div>
+                      </div>
+                      <div class="ed-element ed-text custom-theme" id="showreel-ocarina-text">
+                        <p style="text-align: justify">
+                          OcarinaOS is an embedded project where playing a real instrument gets recognized as a valid
+                          magic spell, similarly to The Legend of Zelda: Ocarina of Time!
+                        </p>
+                      </div>
+                      <div class="ed-element ed-spacer" id="showreel-ocarina-spacer-2">
+                        <div class="space"></div>
+                      </div>
+                      <div class="ed-element ed-button custom-theme center" id="showreel-ocarina-button">
+                        <a class="button button-default button-color-default" href="/projects">Find out more!</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="ed-slider-item">
                   <div class="ed-element ed-container full-width" id="showreel-slide-rpbc">
                     <div class="background">

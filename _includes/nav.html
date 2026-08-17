@@ -1,0 +1,74 @@
+<style>
+  /* Layout for the nav bar itself: keeps the logo left, menu/hamburger right,
+     everything vertically centered. This has to travel with the markup
+     because every page that includes this partial shares these same ids. */
+  #nav-bar {
+    border-width: 0px 0px 1px;
+    border-style: solid;
+  }
+  #nav-bar > .inner {
+    justify-content: space-between;
+    align-items: center;
+  }
+  #nav-logo {
+    flex-basis: auto;
+  }
+  #nav-logo img {
+    width: 181px;
+  }
+  #nav-menu {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+  #nav-mobile-trigger-wrapper {
+    flex-basis: auto;
+  }
+  #nav-mobile-trigger-wrapper > .inner {
+    place-content: center flex-end;
+    align-items: center;
+  }
+  @media screen and (max-width: 975px) {
+    #nav-mobile-trigger-wrapper > .inner {
+      justify-content: flex-end;
+    }
+  }
+</style>
+<div
+  class="ed-element ed-container wv-boxed menu-wrapper wv-overflow_visible preset-menu-v2-default"
+  style="border-color: rgba(255, 255, 255, 0.2)"
+  id="nav-bar"
+>
+  <div class="inner">
+    <div class="ed-element ed-logo" id="nav-logo">
+      <a href="/"><img src="/images/logo.svg" alt="rosecod.es" /></a>
+    </div>
+    <nav class="ed-element ed-menu wv-custom" id="nav-menu">
+      <ul class="menu-level-0">
+        <li class="wv-page-27731483-en first">
+          <a href="/" class="wv-page-27731483-en first">Home</a>
+        </li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#showreel">Snapshot</a></li>
+        <li><a href="/#resume">Resume</a></li>
+        <li class="wv-page-27731486-en">
+          <a href="/projects" class="wv-page-27731486-en">Projects</a>
+        </li>
+        <li class="wv-page-27731489-en">
+          <a href="/experience" class="wv-page-27731489-en">Experience</a>
+        </li>
+        <li class="wv-page-28962485-en end">
+          <a href="/hobbies" class="wv-page-28962485-en last">Hobbies</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="ed-element ed-container mobile-cont wv-overflow_visible" id="nav-mobile-trigger-wrapper">
+      <div class="inner">
+        <div class="ed-element ed-html menu-trigger" id="nav-mobile-trigger-button">
+          <div class="menu-trigger-box">
+            <button class="menu-trigger-inner">Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -104,7 +104,81 @@
         </svg>
       </div>
       <div class="inner">
-        <!--#include nav active="experience"-->
+        <style>
+  /* Layout for the nav bar itself: keeps the logo left, menu/hamburger right,
+     everything vertically centered. This has to travel with the markup
+     because every page that includes this partial shares these same ids. */
+  #nav-bar {
+    border-width: 0px 0px 1px;
+    border-style: solid;
+  }
+  #nav-bar > .inner {
+    justify-content: space-between;
+    align-items: center;
+  }
+  #nav-logo {
+    flex-basis: auto;
+  }
+  #nav-logo img {
+    width: 181px;
+  }
+  #nav-menu {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+  #nav-mobile-trigger-wrapper {
+    flex-basis: auto;
+  }
+  #nav-mobile-trigger-wrapper > .inner {
+    place-content: center flex-end;
+    align-items: center;
+  }
+  @media screen and (max-width: 975px) {
+    #nav-mobile-trigger-wrapper > .inner {
+      justify-content: flex-end;
+    }
+  }
+</style>
+<div
+  class="ed-element ed-container wv-boxed menu-wrapper wv-overflow_visible preset-menu-v2-default"
+  style="border-color: rgba(255, 255, 255, 0.2)"
+  id="nav-bar"
+>
+  <div class="inner">
+    <div class="ed-element ed-logo" id="nav-logo">
+      <a href="/"><img src="/images/logo.svg" alt="rosecod.es" /></a>
+    </div>
+    <nav class="ed-element ed-menu wv-custom" id="nav-menu">
+      <ul class="menu-level-0">
+        <li class="wv-page-27731483-en first">
+          <a href="/" class="wv-page-27731483-en first">Home</a>
+        </li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#showreel">Snapshot</a></li>
+        <li><a href="/#resume">Resume</a></li>
+        <li class="wv-page-27731486-en">
+          <a href="/projects" class="wv-page-27731486-en">Projects</a>
+        </li>
+        <li class="wv-page-27731489-en active">
+          <a href="/experience" class="wv-page-27731489-en active">Experience</a>
+        </li>
+        <li class="wv-page-28962485-en end">
+          <a href="/hobbies" class="wv-page-28962485-en last">Hobbies</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="ed-element ed-container mobile-cont wv-overflow_visible" id="nav-mobile-trigger-wrapper">
+      <div class="inner">
+        <div class="ed-element ed-html menu-trigger" id="nav-mobile-trigger-button">
+          <div class="menu-trigger-box">
+            <button class="menu-trigger-inner">Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="ed-element ed-container wv-boxed wv-spacer banner-content" id="hero-content">
           <div class="inner" data-parallax-amount="40">
             <div class="ed-element ed-headline custom-theme" id="ed-2297663078">
@@ -296,7 +370,139 @@
         </div>
       </div>
     </div>
-    <!--#include footer-->
+    <style>
+  /* Footer layout, moved here (and de-duplicated out of all 4 pages that
+     include this partial) since it only ever needs to be defined once. */
+  #footer-content-band > .shape-divider svg {
+    height: 13vw;
+    translate: 0%;
+    --shape-width: 1;
+  }
+  #footer-bg-image > .background-image-holder:not(.ed-lazyload) {
+    background-image: url("/images/mathy.jpeg") !important;
+  }
+  #footer-icons-row {
+    flex-basis: auto;
+  }
+  #footer-comments-icon svg {
+    margin: 0 auto;
+  }
+  #footer-contact-spacer .space {
+    height: 16px;
+  }
+  #footer-contact-heading h3 {
+    text-align: center;
+  }
+  #footer-social-icons > .inner {
+    justify-content: center;
+  }
+  #footer-github-icon svg > * {
+    stroke-width: 0px;
+  }
+</style>
+<div class="ed-element ed-container footer preset-footer-tyr-v3-default wv-overflow_hidden" id="site-footer">
+  <div class="inner">
+    <div
+      class="ed-element ed-container wv-boxed footer-tyr-content wv-overflow_visible wv-spacer full-width"
+      id="footer-content-band"
+    >
+      <div class="background">
+        <figure class="ed-element ed-image wv-bg" id="footer-bg-image">
+          <div class="background-image-holder ed-lazyload" data-background='url("/images/mathy.jpeg")'></div>
+        </figure>
+      </div>
+      <div
+        class="overlay"
+        style="background: linear-gradient(90deg, rgba(46, 49, 150, 0.5) 0%, rgba(97, 10, 144, 0.55) 100%)"
+      ></div>
+      <div class="shape-divider top inverted">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 15" preserveAspectRatio="none" data-shape="circle">
+          <path
+            class="cls-1 fill-background"
+            d="M 0 3 L 0 15 L 50.304688 15 C 35.304702 15 20.304667 10.999992 0.3046875 3 L 0 3 z M 50.304688 15 L 100 15 L 100 3.1171875 C 80.156551 11.033695 65.226201 15 50.304688 15 z M 100 3.1171875 C 100.10436 3.0755549 100.20006 3.0418515 100.30469 3 L 100 3 L 100 3.1171875 z "
+          ></path>
+        </svg>
+      </div>
+      <div class="inner">
+        <div class="ed-element ed-container footer-tyr-box wv-overflow_visible" id="footer-icons-row">
+          <div class="inner">
+            <figure class="ed-element ed-icon footer-tyr-icon" id="footer-comments-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 640 512"
+                data-icon="fa-sharp-solid-comments"
+                role="img"
+                preserveAspectRatio="xMidYMid"
+                style="overflow: hidden"
+              >
+                <path
+                  d="M416 176c0 97.2 -93.1 176 -208 176c-36.2 0 -70.3 -7.8 -99.9 -21.6L0 352l37.6 -75.1C13.9 248.3 0 213.5 0 176C0 78.8 93.1 0 208 0S416 78.8 416 176zm32 0c0 -5.2 -0.2 -10.4 -0.6 -15.5C555.1 167.1 640 243.2 640 336c0 37.5 -13.9 72.3 -37.6 100.9L640 512 531.9 490.4C502.3 504.2 468.2 512 432 512c-95.6 0 -176.2 -54.6 -200.5 -129C348.9 372.9 448 288.3 448 176z"
+                ></path>
+              </svg>
+            </figure>
+            <div class="ed-element ed-spacer" id="footer-contact-spacer">
+              <div class="space"></div>
+            </div>
+            <div class="ed-element ed-headline custom-theme" id="footer-contact-heading">
+              <h3>Contact</h3>
+            </div>
+            <div class="ed-element ed-text custom-theme" id="footer-contact-info">
+              <p style="text-align: center">
+                <span data-bind="customer.company">Rose Rodrigues 🌹</span>
+              </p>
+              <p style="text-align: center">
+                <a data-bind="customer.email" href="mailto:rodr08(seven)5(at)umn(dot)edu"
+                  >rodr08(seven)5(at)umn(dot)edu</a
+                >
+              </p>
+            </div>
+            <div class="ed-element ed-spacer" id="footer-social-spacer">
+              <div style="height: 32px" class="space"></div>
+            </div>
+            <div
+              class="ed-element ed-container wv-overflow_visible preset-social-icons-v3-default"
+              id="footer-social-icons"
+            >
+              <div class="inner">
+                <figure class="ed-element ed-icon social-icons-icon" id="footer-linkedin-icon">
+                  <a href="https://www.linkedin.com/in/roserha/" target="_blank" title="LinkedIn"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -811 1000 923"
+                      data-icon="ico-brand-linkedin"
+                      role="img"
+                      preserveAspectRatio="xMidYMid"
+                      style="overflow: hidden"
+                    >
+                      <path
+                        d="M753.2 -525.8C639.4 -525.8 588.5 -465.5 560 -423v2.1h-1.4c0.5 -0.6 1 -1.4 1.4 -2.1v-88.2H345.7c2.7 58.4 0 622.8 0 622.8H560v-347.8c0 -18.7 1.4 -37.1 7.1 -50.5 15.5 -37.1 50.9 -75.8 110 -75.8 77.6 -0 108.7 57.2 108.7 140.9v333.2H1000v-357.1c0 -191.3 -105.8 -280.3 -246.8 -280.3zm-632 -285.7C48 -811.5 0 -764.9 0 -703.8 0 -644.1 46.5 -596.2 118.4 -596.2h1.4c74.8 -0 121.3 -47.9 121.3 -107.6 -1.4 -61.1 -46.6 -107.7 -119.9 -107.7zM12.6 -511.1H227v622.8H12.6v-622.8z"
+                      ></path></svg
+                  ></a>
+                </figure>
+                <figure class="ed-element ed-icon social-icons-icon" id="footer-github-icon">
+                  <a href="https://github.com/roserha" target="_blank" title="GitHub"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 -416 448 448"
+                      data-icon="ion-ion-social-github"
+                      role="img"
+                      preserveAspectRatio="xMidYMid"
+                      style="overflow: hidden"
+                    >
+                      <path
+                        d="M224 -416c124 -0 224 103 224 230c0 101 -64 188 -153 218h-4c-8 -0 -12 -7 -12 -12c0 -8 1 -31 1 -62c0 -21 -8 -36 -16 -43c50 -6 103 -25 103 -113c0 -25 -9 -46 -23 -62c2 -6 10 -29 -2 -61h-5c-8 -0 -27 3 -57 24c-18 -5 -37 -8 -56 -8s-38 3 -56 8c-30 -21 -49 -24 -57 -24h-5c-12 32 -4 55 -2 61c-14 16 -23 37 -23 62c0 88 52 107 102 113c-6 6 -12 16 -14 31c-6 3 -16 6 -26 6c-13 -0 -28 -5 -39 -25c0 -0 -13 -22 -35 -24v-0c-2 -0 -21 -0 -1 14c0 -0 15 8 25 34c0 -0 10 33 53 33c7 -0 14 -0 22 -2v39c0 5 -3 11 -11 11h-4c-89 -30 -153 -116 -153 -218c0 -127 100 -230 224 -230z"
+                      ></path></svg
+                  ></a>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="/webcard/static/app.bundle.1779969814.js"></script>
     <script src="/js/custom.260325221346.js"></script>
   </body>

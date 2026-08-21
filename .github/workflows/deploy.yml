@@ -19,6 +19,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch résumé from Google Docs
+        env:
+          DOC_ID: 1RF9SWq7YdP-nXEfpPUb3U1FmHRIq8OZDNpYO5k2Plz4
+        run: |
+          set -uo pipefail
+          tmp="$(mktemp)"
+          if curl -fsSL --max-time 30 \
+               "https://docs.google.com/document/d/${DOC_ID}/export?format=pdf" \
+               -o "$tmp"; then
+            if [ "$(head -c 4 "$tmp")" = "%PDF" ]; then
+              mkdir -p images
+              mv "$tmp" images/resume.pdf
+              echo "résumé updated from Google Docs ($(du -h images/resume.pdf | cut -f1))"
+            else
+              echo "::warning::export returned non-PDF (check doc sharing) — keeping committed copy"
+            fi
+          else
+            echo "::warning::could not reach Google Docs — keeping committed copy"
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"

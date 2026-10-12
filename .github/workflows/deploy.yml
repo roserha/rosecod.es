@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Fetch résumé from Google Docs
         env:
           DOC_ID: 1RF9SWq7YdP-nXEfpPUb3U1FmHRIq8OZDNpYO5k2Plz4

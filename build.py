@@ -25,7 +25,7 @@ OUT = ROOT / "_site"
 
 # Paths that are never part of the built site.
 EXCLUDE_DIRS = {"_includes", "_site", ".github", ".git", "node_modules"}
-EXCLUDE_FILES = {"build.py", "README.md", ".gitignore"}
+EXCLUDE_FILES = {"build.py", "README.md", ".gitignore", ".gitmodules"}
 
 # Active-page hrefs, keyed by the "active" attribute used in each page's
 # <!--#include nav active="..."--> marker.
